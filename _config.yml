@@ -2,6 +2,8 @@
 site:
   logo: Ckryo
   title: 'Ckryo - 技术栈'
+  keywords: Ckryo, php, laravel, vue, iview, ios, 全栈工程师, 创业
+  description: Ckryo - 技术栈， 分享各类新奇有趣、科技、技术、开发，各类互联网优质精选文章以及优秀开源项目； -- by Ckryo。
 
 post: 
   # 文章模块标题
@@ -33,11 +35,7 @@ menu_icons:
 
 # 集成第三方服务
 vendors:
-  # 百度统计 Analytics ID
-  #baidu_analytics:
-
   # 社会化评论， 畅言
   changyan:
-    enable: false
     app_id: cysYE5nWR
     conf: prod_ea59e8a942c2c4c0e72b24ed00ecddc9

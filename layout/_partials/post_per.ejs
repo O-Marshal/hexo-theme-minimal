@@ -1,7 +1,6 @@
 
-
-<% if (site.posts.length > 0) { %>
-    <% site.posts.sort('date', -1).limit(5).each(function(post) { %>
+<% if (page.posts.length > 0) { %>
+    <% page.posts.each(function(post) { %>
         <article class="post-item">
             <div class="blog block post-content-area">
                 <% if (post._preview) { %>
@@ -18,7 +17,6 @@
                             -
                         <% } %>
                       </a>
-                      <% console.log(post.categories); %>
                     </div>
                     <div style="max-height: 350px; overflow: hidden; line-height: 24px">
                         <%-post_abstract(post) %>

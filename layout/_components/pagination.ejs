@@ -1,4 +1,4 @@
-<% if (page.prev_link && page.next_link) { %>
+<% if (page.prev_link || page.next_link) { %>
   <div class="pagination">
     <% if (page.prev_link) { %>
     	<a href="<%=url_for(page.prev_link)%>" class="btn btn-direction btn-default-filled"><i class="fa fa-long-arrow-left"></i><span>上一页</span></a>

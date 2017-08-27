@@ -1,10 +1,11 @@
+<% if (theme.vendors.changyan && page.comments != false) { %>
 <div id="comment">
     <!--PC和WAP自适应版-->
     <div id="SOHUCS" sid="请将此处替换为配置SourceID的语句"></div>
     <script type="text/javascript">
     (function() {
-        var appid = 'cysYE5nWR';
-        var conf = 'prod_ea59e8a942c2c4c0e72b24ed00ecddc9';
+        var appid = '<%-theme.vendors.changyan.app_id %>';
+        var conf = '<%-theme.vendors.changyan.conf %>';
         var width = window.innerWidth || document.documentElement.clientWidth;
         if (width < 960) {
             window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
@@ -41,3 +42,4 @@
     </script>
 </div>
 <!-- / comments -->
+<% } %>
