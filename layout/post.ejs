@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/css/i_slidebar.css">
+<link rel="stylesheet" href="/css/i_post.css">
+<div id="page-content" class="container">
+    <!-- post content + sidebar -->
+    <section id="blog">
+        <div class="row">
+            <!-- post content area -->
+            <div class="col-md-9">
+                <div class="blog block post-content-area">
+                    <img src="<%-page.preview%>" alt="">
+                    <div class="post-info-box">
+                        <h1 style="font-size: 48px;"><%=page.title%></h1>
+                        <p class="post-info" style="margin-bottom: 15px;">
+                            发表于:
+                            <span style="color: #aaa; margin: 0 15px">
+                                <%- date(page.date, 'YYYY.MM.DD') %>
+                            </span>
+                             | 分类：
+                             <a href="#" style="margin: 0 5px">
+                                <% if (page.categories.length > 0) { %>
+                                    <%-page.categories.data[0].name %>
+                                <% } else { %>
+                                    -
+                                <% } %>
+                             </a>
+                             <% if (page.categories.length > 0) { %>
+                                标签：
+                                <% for (var i in page.tags.data) { %>
+                                    <a href="#" class="post-tag"><%-page.tags.data[i].name %></a>
+                                <% } %>
+                            <% } %>
+                        </p>
+                        <%-page.content%>
+                    </div>
+                    <!-- / post-info-box -->
+                </div>
+                <!-- / blog-block -->
+                <%- partial('_components/changyan') %>
+            </div>
+            <!-- / col-md-9 -->
+            <!-- / post content area -->
+            <%- partial('_partials/post_sidebar') %>
+        </div>
+        <!-- / row -->
+    </section>
+    <!-- / post content + sidebar -->
+</div>

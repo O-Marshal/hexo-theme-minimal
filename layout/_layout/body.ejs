@@ -1,0 +1,52 @@
+<body data-spy="scroll" data-target="#post-scroll-spy">
+    <!-- preloader -->
+    <div id="preloader">
+        <div class="spinner spinner-round"></div>
+    </div>
+    <!-- / preloader -->
+    <!-- header -->
+    <header>
+        <!-- nav -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-logo" href="/index.html">
+                        <%-theme.site.logo%>
+                    </a>
+                </div>
+                <!-- / navbar-header -->
+                <% if (theme.menu) { %>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    	<% for (let key in theme.menu) { %>
+                        <li>
+	                        <a href="<%-theme.menu[key] %>">
+	                        	<% if (theme.menu_icons) { %>
+	                        		<i class="fa fa-<%-theme.menu_icons[key] %>"></i>
+	                        	<% } %>
+	                        	<span><%-key %></span>
+	                        </a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <% } %>
+                <!--/ nav-collapse -->
+            <!-- / container -->
+        </nav>
+        <!-- / nav -->
+        <!-- header-banner -->
+        <%-partial('_components/banner')%>
+        <!-- / header-banner -->
+    </header>
+    <!-- / header -->
+    <!-- / content -->
+    <%- body %>
+        <!-- / content -->
+</body>

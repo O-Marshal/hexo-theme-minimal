@@ -1,0 +1,44 @@
+<style type="text/css">
+.post-preview {
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+</style>
+<section id="blog-small">
+    <div class="container">
+        <div class="page-header no-margin text-center">
+            <h2><%-theme.post.title %></h2>
+        </div>
+        <p class="text-center"><%-theme.post.description %></p>
+        <div class="row">
+            <% recent_posts().forEach(function (item) { %>
+                <!-- post-block -->
+                <div class="col-sm-4">
+                    <div class="post-block">
+                        <a href="<%-item.path %>" class="post-preview" style="background-image: url(<%-item.preview %>)"></a>
+                        <div class="small-post-text">
+                            <h5><a href="<%-item.path %>"><%-item.title %></a></h5>
+                            <p class="small-post-meta">
+                                <%- date(item.date, 'YYYY/MM/DD') %>
+                            </p>
+                            <p class="space-bottom" style="max-height: 100px; overflow: hidden">
+                                <%-post_abstract(item) %>
+                            </p>
+                        </div>
+                        <!-- / small-post-text -->
+                    </div>
+                    <!-- / post-block -->
+                </div>
+                <!-- / col-md-4 -->
+                <!-- / post-block -->
+                <% }) %>
+        </div>
+        <!-- / row -->
+    </div>
+    <!-- / container -->
+    <div class="page-to-all"><a href="/post/index.html" class="btn btn-primary btn-rounded">全部文章</a></div>
+</section>

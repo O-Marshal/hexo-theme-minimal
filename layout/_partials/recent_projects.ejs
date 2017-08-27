@@ -1,0 +1,106 @@
+<style type="text/css">
+    .page-to-all {
+        width: 100%;
+        text-align: center;
+        margin: 40px auto 10px;
+    }
+    .page-to-all a {
+        display: inline-block;
+    }
+    #portfolio .portfolio-filter li{
+        cursor: pointer;
+    }
+     #portfolio .lightbox .project-hover-tools {
+        left: 50%;
+        right: auto;
+        width: 42px;
+        margin-left: -21px;
+    }
+    #portfolio .lightbox .project-hover-tools a {
+        margin: 0;
+    }
+    
+    #portfolio .lightbox .project .project-preview {
+        position: relative;
+        height: 260px;
+        overflow: hidden;
+    }
+    #portfolio .lightbox .project .project-preview img {
+        min-width: 100%;
+        min-height: 100%;
+        position: relative;
+        margin: auto;
+    }
+    .project-item-name {
+        display: none;
+    }
+    @media (max-width: 768px) {
+        #portfolio .project-item-name {
+            display: block;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+</style>
+<section id="portfolio">
+    <div class="container">
+        <!-- portfolio filter -->
+        <ul class="portfolio-filter list-inline text-center">
+            <li><a data-group="all" class="active">全部</a></li>
+            <% recent_project_tags().forEach(function (item) { %>
+                <li><a data-group="<%-item.id%>"><%-item.name%></a></li>
+            <% }); %>
+        </ul>
+        <!--end portfolio filter -->
+        <ul class="row portfolio list-unstyled lightbox" id="grid">
+
+            <% recent_projects().forEach(function (item) { %>
+                <!-- project -->
+                <li class="col-xs-6 col-md-4 project project-item" data-groups='<%-item.tag_group%>' data-url="<%-item.path%>">
+                    <div class="img-bg-color primary">
+                        <div class="project-preview"><img src="<%-item.preview%>"></div>
+                        <!-- project-hover-tools -->
+                        <div class="project-hover-tools">
+                            <a href="<%-item.path%>" class="view-btn">
+                                <i class="lnr lnr-eye"></i>
+                            </a>
+                        </div>
+                        <!-- / project-hover-tools -->
+                        <!-- project-details -->
+                        <div class="project-details">
+                            <h5 class="project-title"><%-item.title%></h5>
+                            <p class="skill"><%-item.tag_label%></p>
+                        </div>
+                        <!-- / project-details -->
+                        <div class="project-item-name"><%-item.title%></div>
+                    </div>
+                    <!-- / img-bg-color -->
+                </li>
+                <!-- / project -->
+            <% }) %>
+
+            <% if (recent_projects().length < 12) { %>
+                <!-- project -->
+                <li class="col-xs-6 col-md-4 project" data-groups='["illustration"]'>
+                    <div class="img-bg-color primary">
+                        <div class="project-preview"><img src="/images/project_preview_more.jpg"></div>
+                        <!-- project-details -->
+                        <div class="project-details">
+                            <h5 class="project-title">敬请期待</h5>
+                            <p class="skill">更多项目</p>
+                        </div>
+                        <!-- / project-details -->
+                    </div>
+                    <!-- / img-bg-color -->
+                </li>
+                <!-- / project -->
+            <% } %>
+        </ul>
+        <!-- / projects -->
+    </div>
+    <!-- / container -->
+    <script src="/js/project_index.js" type="text/javascript" charset="utf-8"></script>
+    <div class="page-to-all"><a href="/project/index.html" class="btn btn-primary btn-rounded">全部项目</a></div>
+</section>

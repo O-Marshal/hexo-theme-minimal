@@ -1,0 +1,30 @@
+
+
+<% if (site.projects.length > 0) { %>
+    <% site.projects.sort('date', -1).limit(10).each(function(post) { %>
+        <div class="blog block post-content-area">
+            <div class="post-info-box">
+                <div class="row">
+                	<div class="col-sm-6"><img src="<%-post.preview %>"></div>
+                	<p class="col-sm-6" style="max-height: 260px; overflow: hidden">
+                    <h4><%=post.title%></h4>
+                    <%=post.description%>
+                	</p>
+                </div>
+                <div class="blog-post-footer">
+                    <a href="<%-post.path%>" class="btn btn-primary-filled"><span>查看详情</span><i class="fa fa-long-arrow-right"></i></a>
+                    <div class="pull-right">
+                            <% for (var i in post.tags.data) { %>
+                                <a href="#" class="post-tag"><%-post.tags.data[i].name %></a>
+                            <% } %>
+                        </div>
+                </div>
+                <!-- / blog-post-footer -->
+            </div>
+            <!-- / post-info-box -->
+        </div>
+        <!-- / blog-block -->
+        <div class="space-50">&nbsp;</div>
+        <!-- / col-sm-8 col-md-9 -->
+    <% }); %>
+<% } %>

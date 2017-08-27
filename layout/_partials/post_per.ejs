@@ -1,0 +1,43 @@
+
+
+<% if (site.posts.length > 0) { %>
+    <% site.posts.sort('date', -1).limit(5).each(function(post) { %>
+        <article class="post-item">
+            <div class="blog block post-content-area">
+                <% if (post._preview) { %>
+                    <a href="<%-post.path%>"><img src="<%-post._preview %>"></a>
+                <% } %>
+                <div class="post-info-box">
+                    <a href="<%-post.path%>"><h1><%-post.title%></h1></a>
+                    <div class="post-meta">
+                      <span class="post-date"><%-date(post.date, 'YYYY.MM')%></span>
+                      <a href="#" class="post-author">
+                        <% if (post.categories.length > 0) { %>
+                            <%-post.categories.data[0].name %>
+                        <% } else { %>
+                            -
+                        <% } %>
+                      </a>
+                      <% console.log(post.categories); %>
+                    </div>
+                    <div style="max-height: 350px; overflow: hidden; line-height: 24px">
+                        <%-post_abstract(post) %>
+                    </div>
+                    <div class="blog-post-footer">
+                        <a href="<%-post.path%>" class="btn btn-primary-filled"><span>阅读全文</span><i class="fa fa-long-arrow-right"></i></a>
+                        <div class="pull-right">
+                            <% for (var i in post.tags.data) { %>
+                                <a href="#" class="post-tag"><%-post.tags.data[i].name %></a>
+                            <% } %>
+                        </div>
+                    </div>
+                    <!-- / blog-post-footer -->
+                </div>
+                <!-- / post-info-box -->
+            </div>
+            <!-- / blog-block -->
+        </article>
+        <div class="space-50">&nbsp;</div>
+        <!-- / col-sm-8 col-md-9 -->
+    <% }); %>
+<% } %>

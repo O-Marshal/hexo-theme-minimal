@@ -1,0 +1,43 @@
+
+site:
+  logo: Ckryo
+  title: 'Ckryo - 技术栈'
+
+post: 
+  # 文章模块标题
+  title: 推荐文章
+  # 文章模块副标题
+  description: 新奇有趣、科技、技术、开发，各类互联网优质精选文章
+
+banner:
+  title: Ckryo - 技术栈
+  description: 优秀技术资源分享
+  background_image: /images/banner-bg.jpg
+
+author:
+  avatar: '/images/avatar.gif'
+  nick: 'Ckryo'
+  description: '曾担任 微阿里（北京）科技有限公司 、微阿里（北京）品牌管理有限公司 CEO 、沈阳盾盾科技有限公司 创始人 之一， 曾从事过 VB，Andorid，PHP，Node，H5 项目开发，现主要从事Swift开发，从swift1.2开始使用swift代替其他语言进行完整的项目开发，精通IOS开发，拥有Mac软件开发经验，目前正在利用swift进行服务端开发...'
+
+
+# main menu navigation
+menu:
+  首页: /
+  项目: /project/index.html
+  文章: /post/index.html
+  关于我: /about.html
+  Minimal: /project/2016/04/28/hexo-minimal.html
+
+menu_icons:
+  Minimal: tachometer
+
+# 集成第三方服务
+vendors:
+  # 百度统计 Analytics ID
+  #baidu_analytics:
+
+  # 社会化评论， 畅言
+  changyan:
+    enable: false
+    app_id: cysYE5nWR
+    conf: prod_ea59e8a942c2c4c0e72b24ed00ecddc9

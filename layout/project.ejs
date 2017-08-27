@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/css/i_slidebar.css">
+<link rel="stylesheet" href="/css/i_post.css">
+<!-- content -->
+<div id="page-content" class="container">
+    <!-- project content + sidebar -->
+    <section id="project">
+        <div class="row">
+            <!-- project content area -->
+            <div class="col-sm-7">
+                <div class="project-content-area">
+                    <img src="<%=page.preview%>" style="max-height: 400px" alt="" class="space-bottom-30">
+                    <%-get_content(page) %>
+                </div><!-- / project-content-area -->    
+                <%- partial('_components/changyan') %>
+            </div>
+            <!-- / project-content-area -->
+
+            <!-- project sidebar area -->
+            <div class="col-sm-5 project-sidebar right">
+                <div class="section-description light">
+                    <h4><%=page.title%></h4>
+                    <%=page.description%>
+                    <h4 class="space-top-30">项目信息</h4>
+                    <div class="project-info">
+                        <div class="info">
+                            <p><i class="lnr lnr-user"></i><span>分类:<a style="margin-left: 5px"> <%-page.categories.data[0].name%></a></span></p>
+                        </div>
+                        <div class="info">
+                            <p><i class="lnr lnr-star"></i><span>标签:</span>
+                            <% page.tags.forEach(function (tag, index) { %>
+                                <% if (index > 0) { %>,<% } %><a style="margin-left: 5px"><%-tag.name %></a>
+                            <% }); %>
+                            </p>
+                        </div>
+                        <div class="info">
+                            <p><i class="lnr lnr-calendar-full"></i><span>创建时间: <%- page.date ? date(page.date, 'YYYY年MM月') : ' - ' %></span></p>
+                        </div>
+                    </div><!-- / project-info -->
+
+                    <div class="info-buttons">
+                        <% if (page.home_url) { %>
+                            <a href="<%-page.home_url%>" target="_blank" class="btn btn-primary-filled"><i class="lnr lnr-eye"></i><span>项目主页</span></a>
+                        <% } else { %>
+                            <button disabled class="btn btn-primary-filled"><i class="lnr lnr-eye"></i><span>项目主页</span></button>
+                        <% } %>
+                        <% if (page.demo_url) { %>
+                            <a href="<%-page.demo_url%>" target="_blank" class="btn btn-default-filled"><i class="lnr lnr-download"></i><span>演示 or 下载</span></a>
+                        <% } %>
+                    </div><!-- / info-buttons -->
+
+                </div><!-- section-description -->
+
+            </div><!-- / col-sm-4 col-md-3 -->
+            <!-- / project sidebar area -->
+        </div><!-- / row -->
+    </section>
+    <!-- / project content + sidebar -->
+
+</div><!-- / container -->

@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/i_slidebar.css">
+<link rel="stylesheet" href="/css/i_post.css">
+<div id="page-content" class="container">
+    <!-- blog content + sidebar -->
+    <section>
+        <div class="row">
+            <!-- blog content area -->
+            <div class="col-sm-8 col-md-9">
+            	<%-partial('_partials/project_per')%>
+            </div><!-- / col-sm-8 col-md-9 -->
+            <!-- / blog content area -->
+            <!-- blog sidebar area -->
+            <div class="col-sm-4 col-md-3 blog-sidebar">
+                <%-partial('_components/slidebar') %>
+            </div><!-- / col-sm-4 col-md-3 -->
+            <!-- / blog sidebar area -->
+        </div><!-- / row -->
+    </section>
+    <!-- / blog content + sidebar -->
+
+    <!-- pagination -->
+    <%-partial('_components/pagination')%>
+    <!-- / pagination -->
+
+</div><!-- / container -->
+
+<!-- / content -->

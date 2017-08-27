@@ -1,0 +1,166 @@
+.blog-sidebar .post-sidebar-widget .site-author-image {
+    display: block;
+    margin: 0 auto;
+    padding: 2px;
+    max-width: 120px;
+    height: auto;
+    border: 1px solid #eee;
+}
+
+.blog-sidebar .post-sidebar-widget .site-author-name {
+    margin: 10px 0;
+    text-align: center;
+    color: #222;
+    font-weight: 600;
+}
+
+.blog-sidebar .post-sidebar-widget .site-author-description {
+    margin-top: 0;
+    text-align: center;
+    font-size: 13px;
+    padding: 0 20px;
+    color: #999;
+}
+
+
+/*文章-项目统计*/
+
+.blog-sidebar .post-sidebar-widget .site-state {
+    overflow: hidden;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.blog-sidebar .post-sidebar-widget .site-state-item {
+    display: inline-block;
+    padding: 0 15px;
+    border-left: 1px solid #eee;
+}
+
+.blog-sidebar .post-sidebar-widget .site-state-item:first-child {
+    border-left: none;
+}
+
+.blog-sidebar .post-sidebar-widget .site-state-item a {
+    border-bottom: none;
+}
+
+.blog-sidebar .post-sidebar-widget .site-state-item-count {
+    display: block;
+    text-align: center;
+    color: inherit;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.blog-sidebar .post-sidebar-widget .site-state-item-name {
+    font-size: 13px;
+    color: #999;
+}
+
+
+/*RSS订阅*/
+
+.blog-sidebar .post-sidebar-widget .feed-link {
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    text-align: center;
+    padding: 8px 0;
+    width: 80%;
+    margin: 0 auto 15px;
+}
+
+.blog-sidebar .post-sidebar-widget .feed-link a {
+    display: block;
+    color: #fc6423;
+    border: none;
+}
+
+.blog-sidebar .post-sidebar-widget .feed-link a:hover {
+    background: none;
+    color: #e34603;
+}
+
+.blog-sidebar .post-sidebar-widget .feed-link a:hover i {
+    color: #e34603;
+}
+
+
+/*个人页面链接*/
+
+.blog-sidebar .post-sidebar-widget .links-of-author:before,
+.blog-sidebar .post-sidebar-widget .links-of-author:after {
+    content: " ";
+    display: table;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author:after {
+    clear: both;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author-item {
+    float: left;
+    margin: 5px 0 0;
+    width: 50%;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author-item a {
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author-item a:hover {
+    border-radius: 4px;
+    background: #eee;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author-item .fa {
+    margin-right: 2px;
+    font-size: 16px;
+}
+
+.blog-sidebar .post-sidebar-widget .links-of-author-item .fa-globe {
+    font-size: 15px;
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+
+@media (min-width: 992px) {
+    .blog-sidebar.affix,
+    .blog-sidebar.affix-bottom {
+        width: 213px;
+    }
+    .blog-sidebar.affix {
+        position: fixed;
+        /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+    .blog-sidebar.affix-bottom {
+        position: absolute;
+        /* Undo the static from mobile first approach */
+    }
+}
+
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+
+@media (min-width: 1200px) {
+    .blog-sidebar.affix-bottom,
+    .blog-sidebar.affix {
+        width: 263px;
+    }
+}
